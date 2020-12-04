@@ -11,17 +11,50 @@
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
 
 // import axios from 'axios'
-// const result = axios.get("https://lambda-times-api.herokuapp.com/topics")
-// console.log(result);
-// console.log(result.config)
 
-// const topicsSection = document.querySelector('topics');
+const result = axios.get("https://lambda-times-api.herokuapp.com/topics");
+console.log(result); //WORKS!!! Returns a promise
+
+console.log(Object.keys(result));//returns an empty array
+
+//Use this for now
+const topcisArray = ["javascript","bootstrap","technology","jquery","node.js"];
+
+console.log(topcisArray);
+
+// console.log(result.data); undefined
+// console.log(result.topics); undefined
+// console.log(result.data.topics); TypeError
+// console.log(result.data["topics"]);TypeError, does not like 'topics'
+// console.log(result[0]);//undefined
+// console.log(result.[1]);//undefined
+// console.log(axios.get("https://lambda-times-api.herokuapp.com/topics")); //Returns a promise
+
+const topicsSection = document.querySelector('topics');
 // debugger
 
+// result.forEach((item) => {
+//     axios
+//     .get("https://lambda-times-api.herokuapp.com/topics");
+//     .then(res => {
+//         console.log(res)
+//         const topicData = res.data.topics;
+//         const newTopic = document.createElement('div')
+//         newTopic.classList.add('tab');
+//         newTopic.textContent = topicData;
+//         topicsSection.appendChild(newTopic);
+//     })
+//     .catch(error => {
+//         console.log(error);
+//     })
+// });
 
+
+// Attempt at putting the forEach loop inside axios 
 // axios
 //     .get("https://lambda-times-api.herokuapp.com/topics");
 //     .then(res => {
+//         console.log(res)
 //         const topicData = res.data.topics;
 //         topicData.forEach-----
 //         const newTopic = document.createElement('div')
