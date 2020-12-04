@@ -23,31 +23,31 @@
 
 const { default: Axios } = require("axios");
 
-// const cardSection = document.querySelector('cards-container');
+const cardSection = document.querySelector('cards-container');
 
-// function cardMaker(articleObj){
-//     const cardDiv = document.createElement('div');
-//     const articleHeadline = document.createElement('div');
-//     const author = document.createElement('div');
-//     const imgDiv = document.createElement('div');
-//     const image = document.createElement('img');
-//     const authorCredit = document.createElement('span');
+function cardMaker(articleObj){
+    const cardDiv = document.createElement('div');
+    const articleHeadline = document.createElement('div');
+    const author = document.createElement('div');
+    const imgDiv = document.createElement('div');
+    const image = document.createElement('img');
+    const authorCredit = document.createElement('span');
 
-//     cardSection.appendChild(cardDiv);
-//     cardDiv.appendChild(articleHeadline);
-//     cardDiv.appendChild(author);
-//     author.appendChild(imgDiv);
-//     imgDiv.appendChild(image);
-//     author.appendChild(authorCredit);
+    cardSection.appendChild(cardDiv);
+    cardDiv.appendChild(articleHeadline);
+    cardDiv.appendChild(author);
+    author.appendChild(imgDiv);
+    imgDiv.appendChild(image);
+    author.appendChild(authorCredit);
 
-//     articleHeadline.textContent = `{placeholder}`;
-//     image.src = ('url')
-//     authorCredit.textContent = `{placeholder}`;
+    articleHeadline.textContent = `{placeholder}`;
+    image.src = ('url')
+    authorCredit.textContent = `{placeholder}`;
 
-//     return cardDiv;
-// }
+    return cardDiv;
+}
 
-// .addEventListener('click', () => console.log(article title))
+.addEventListener('click', () => console.log(article title))
 
 axios
     .get("https://lambda-times-api.herokuapp.com/articles")

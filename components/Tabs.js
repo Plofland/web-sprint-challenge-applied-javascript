@@ -12,44 +12,21 @@
 
 // import axios from 'axios'
 
-const result = axios.get("https://lambda-times-api.herokuapp.com/topics");
-console.log(result); //WORKS!!! Returns a promise
-
+// const result = axios.get("https://lambda-times-api.herokuapp.com/topics");
 
 const topicsSection = document.querySelector('.topics');
 
-
-// result.forEach((item) => {
-//     axios
-//     .get("https://lambda-times-api.herokuapp.com/topics")
-//     .then(res => {
-//         debugger
-//         console.log(res)
-//         const topicData = res.data.topics;
-//         const newTopic = document.createElement('div')
-//         newTopic.classList.add('tab');
-//         newTopic.textContent = topicData;
-//         topicsSection.appendChild(newTopic);
-//     })
-//     .catch(error => {
-//         console.log(error);
-//     })
-// });
-
-
-// Attempt at putting the forEach loop inside axios 
 axios
     .get("https://lambda-times-api.herokuapp.com/topics")
     .then(res => {
-        console.log(res)
+        // console.log(res)
         const topicData = res.data.topics;
-        res.forEach((item){
+        topicData.forEach((item) => {
             const newTopic = document.createElement('div')
             newTopic.classList.add('tab');
-            newTopic.textContent = topicData;
+            newTopic.textContent = item;
             topicsSection.appendChild(newTopic);
         })
-        
     })
     .catch(error => {
         console.log(error);
