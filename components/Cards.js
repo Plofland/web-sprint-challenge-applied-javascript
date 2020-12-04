@@ -20,3 +20,27 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+
+// const cardSection = document.querySelector('cards-container');
+
+// function cardMaker(articleObj){
+//     const cardDiv = document.createElement('div');
+//     const articleHeadline = document.createElement('div');
+//     const author = document.createElement('div');
+//     const imgDiv = document.createElement('div');
+//     const image = document.createElement('img');
+//     const authorCredit = document.createElement('span');
+
+//     cardSection.appendChild(cardDiv);
+//     cardDiv.appendChild(articleHeadline);
+//     cardDiv.appendChild(author);
+//     author.appendChild(imgDiv);
+//     imgDiv.appendChild(image);
+//     author.appendChild(authorCredit);
+
+//     articleHeadline.textContent = `{placeholder}`;
+//     image.src = ('url')
+//     authorCredit.textContent = `{placeholder}`;
+
+//     return cardDiv;
+// }
