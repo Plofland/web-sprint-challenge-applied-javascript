@@ -27,14 +27,21 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+    The Document Object Model is an object representation of the structure(HTML), style and content of the web page. It serves as a bridge between the content of a page and the browser. It is a language neutral API(Application Programming Interface) and is dynamic.
 
 2. What is an event?
+In layman's terms, an event is when the user does something of interest(click, scroll, mouseover, etc.).  The event will generate an event object which contains information about the event the activates.
 
 3. What is an event listener?
+A listener is the interface that handles an event and then responds to the user's action. It takes a type(click, scroll, mouseover, etc.) and a callback function as it's arguments. Once the event is activated, the callback function is executed.
 
 4. Why would we convert a NodeList into an Array?
+A NodeList is a collection of DOM nodes taken from the HTML document. An array is a JavaScript data-type. We would want to convert a NodeList into an array so that we can manipulate the data. With the exception of the length property, a NodeList does not have access to array methods such as .slice, .shift, .push, .splice, etc.
+
 
 5. What is a component?
+
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -44,11 +51,11 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 #### Repository Set Up
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: `git checkout -b <firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [x] Create a forked copy of this project
+- [x] Add your team lead as collaborator on Github
+- [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [x] Create a new branch: `git checkout -b <firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
 - [ ] Push commits: `git push origin <firstName-lastName>`
 
 #### Launching the App
