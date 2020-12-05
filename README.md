@@ -40,7 +40,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 
 5. What is a component?
-    A component is a reuseable section of code. They usually consist of HTML, CSS, and JavaScript and can stand alone. It is a part of the larger whole 
+    A component is a reuseable section of code. They usually consist of HTML, CSS, and JavaScript and can stand alone. It is a part of the larger whole.
 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
@@ -56,7 +56,7 @@ You are expected to be able to answer questions in these areas. Your responses c
 - [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
 - [x] Create a new branch: `git checkout -b <firstName-lastName>`.
 - [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
-- [ ] Push commits: `git push origin <firstName-lastName>`
+- [x] Push commits: `git push origin <firstName-lastName>`
 
 #### Launching the App
 
@@ -91,6 +91,6 @@ After finishing your required elements, you can push your work further. These go
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` branch (student's  Repo). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete after receiving your pull-request
+- [x] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` branch (student's  Repo). **Please don't merge your own pull request**
+- [x] Add your team lead as a reviewer on the pull-request
+- [x] Your team lead will count the project as complete after receiving your pull-request

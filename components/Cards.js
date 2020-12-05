@@ -24,7 +24,6 @@
 const { default: Axios } = require("axios");
 
 const cardSection = document.querySelector('.cards-container');
-// const cardIndividual = document.querySelector('.card');
 
 function cardMaker(articleObj){
     const cardDiv = document.createElement('div');
@@ -34,7 +33,6 @@ function cardMaker(articleObj){
     const image = document.createElement('img');
     const authorCredit = document.createElement('span');
 
-    // cardSection.appendChild(cardDiv); removed this so that I can append to the DOM from the axios loop
     cardDiv.appendChild(articleHeadline);
     cardDiv.appendChild(author);
     author.appendChild(imgDiv);
@@ -46,7 +44,6 @@ function cardMaker(articleObj){
     author.classList.add('author');
     imgDiv.classList.add('img-container');
     
-
     articleHeadline.textContent = articleObj.headline;
     image.src = articleObj.authorPhoto;
     authorCredit.textContent = articleObj.authorName;
@@ -57,7 +54,6 @@ function cardMaker(articleObj){
     
     return cardDiv;
 }
-
 
 
 axios
@@ -79,7 +75,6 @@ axios
                 });
             });
         });
-        
     })
     .catch(error => {
         console.log(error)

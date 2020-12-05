@@ -33,7 +33,6 @@ function header() {
     currentTemp.textContent = "98°";
 
     return headerDiv;
-
 }
 
 header();
