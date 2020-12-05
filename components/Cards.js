@@ -34,7 +34,7 @@ function cardMaker(articleObj){
     const image = document.createElement('img');
     const authorCredit = document.createElement('span');
 
-    // cardSection.appendChild(cardDiv);
+    // cardSection.appendChild(cardDiv); removed this so that I can append to the DOM from the axios loop
     cardDiv.appendChild(articleHeadline);
     cardDiv.appendChild(author);
     author.appendChild(imgDiv);
@@ -45,10 +45,10 @@ function cardMaker(articleObj){
     image.src = ('articleObj.authorPhoto')
     authorCredit.textContent = `${articleObj.authorName}`;
 
-    cardIndividual.addEventListener('click', () => {
-        console.log(`${articleObj.headline}`)
-    })
-    debugger;
+    // cardIndividual.addEventListener('click', () => {
+    //     console.log(`${articleObj.headline}`)
+    // })
+    
     return cardDiv;
 }
 
@@ -57,21 +57,32 @@ function cardMaker(articleObj){
 axios
     .get("https://lambda-times-api.herokuapp.com/articles")
     .then(res => {
-        console.log(res.data.articles);
-        const testRun = res.data.articles;
+        // console.log(res);//object
+        // console.log(res.data);//object
+        // console.log(res.data.articles);//object
+        // console.log(res.data.articles.javascript)//array
+        // console.log(res.data.articles.javascript[0]);//object
+        // console.log(res.data.articles.javascript[0].headline);//string
+
+        const testRun = Object.entries(res.data.articles);//converting this into an array gets rid of the console error ".forEach is not a function" but my debugger is still not tripping and it returns an empty array
+        console.log(testRun);
         testRun.forEach((item) => {
             console.log(item);
+        
             item.forEach((elem) => {
                 console.log(elem);
                 cardSection.appendChild(cardMaker(elem));
             });
-
-        })
+        });
     })
     .catch(error => {
         console.log(error)
     })
 
+
+
+    // Array.from(res.data)
+    
     // testRun.forEach((elem) => {
     //     debugger;
     //     elem.map((item) => {
