@@ -24,7 +24,7 @@
 const { default: Axios } = require("axios");
 
 const cardSection = document.querySelector('.cards-container');
-const cardIndividual = document.querySelector('.card')
+// const cardIndividual = document.querySelector('.card');
 
 function cardMaker(articleObj){
     const cardDiv = document.createElement('div');
@@ -41,13 +41,19 @@ function cardMaker(articleObj){
     imgDiv.appendChild(image);
     author.appendChild(authorCredit);
 
-    articleHeadline.textContent = `${articleObj.headline}`;
-    image.src = ('articleObj.authorPhoto')
-    authorCredit.textContent = `${articleObj.authorName}`;
+    cardDiv.classList.add('card');
+    articleHeadline.classList.add('headline');
+    author.classList.add('author');
+    imgDiv.classList.add('img-container');
+    
 
-    // cardIndividual.addEventListener('click', () => {
-    //     console.log(`${articleObj.headline}`)
-    // })
+    articleHeadline.textContent = articleObj.headline;
+    image.src = articleObj.authorPhoto;
+    authorCredit.textContent = articleObj.authorName;
+
+    cardDiv.addEventListener('click', () => {
+        console.log(articleObj.headline)
+    })
     
     return cardDiv;
 }
@@ -64,31 +70,17 @@ axios
         // console.log(res.data.articles.javascript[0]);//object
         // console.log(res.data.articles.javascript[0].headline);//string
 
-        const testRun = Object.entries(res.data.articles);//converting this into an array gets rid of the console error ".forEach is not a function" but my debugger is still not tripping and it returns an empty array
-        console.log(testRun);
-        testRun.forEach((item) => {
-            console.log(item);
-        
-            item.forEach((elem) => {
-                console.log(elem);
-                cardSection.appendChild(cardMaker(elem));
+        const testRun = Object.entries(res.data.articles);
+        testRun.forEach((element) =>{
+            element.shift();
+            element.forEach((item) => {
+                item.forEach((elem) => {
+                    cardSection.appendChild(cardMaker(elem));
+                });
             });
         });
+        
     })
     .catch(error => {
         console.log(error)
     })
-
-
-
-    // Array.from(res.data)
-    
-    // testRun.forEach((elem) => {
-    //     debugger;
-    //     elem.map((item) => {
-    //         debugger;
-    //         console.log(item);
-    //         debugger;
-    //         cardMaker(item);
-    //     })
-    // })
